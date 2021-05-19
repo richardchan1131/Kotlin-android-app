@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context=".fragments.AllTransactions">
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:checkedButton="@+id/all"
+        style="@style/button_overlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/all"
+            android:backgroundTint="@drawable/button_selector_background"
+            style="@style/selector_button_two"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/monthly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monthly"
+            android:backgroundTint="@drawable/button_selector_background"
+            style="@style/selector_button_two"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/yearly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yearly"
+            android:backgroundTint="@drawable/button_selector_background"
+            style="@style/selector_button_two"
+            />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toggleSelector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_transactions"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp"
+        />
+            <Spinner
+                android:id="@+id/yearSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/title"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toTopOf="@id/title"
+                />
+
+            <HorizontalScrollView
+                android:id="@+id/selectors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    >
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="20dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/January"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/january"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/February"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/february"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/March"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/march"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/April"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/april"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/May"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/may"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/June"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/june"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/July"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/july"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/August"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/august"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/September"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/september"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/October"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/october"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/November"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/november"
+                        tools:ignore="SmallSp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/December"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        style="@style/selector_button"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="10sp"
+                        android:gravity="center"
+                        android:text="@string/december"
+                        tools:ignore="SmallSp" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/noTransactionsDoneText"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:text=""
+                android:textColor="@color/textSecondary"
+                android:textSize="16sp"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/selectors"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/monthlyCard"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/cardBackground"
+                android:elevation="0dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/selectors">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/monthly_budget"
+                        android:textColor="@color/textSecondary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/budget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="4dp"
+                        android:text=""
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text" />
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/your_expenses"
+                        android:textColor="@color/textSecondary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/budget" />
+
+                    <TextView
+                        android:id="@+id/expense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:text=""
+                        android:textColor="@color/textPrimary"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text2" />
+
+                    <ImageView
+                        android:id="@+id/indicator"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_positive_amount"
+                        app:layout_constraintBottom_toBottomOf="@id/text2"
+                        app:layout_constraintStart_toEndOf="@id/text2"
+                        app:layout_constraintTop_toTopOf="@id/text2"
+                        android:contentDescription="@string/icon" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/round"
+                        android:paddingStart="12dp"
+                        android:paddingTop="4dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="4dp"
+                        android:text=""
+                        android:textColor="@color/textSecondary"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <org.eazegraph.lib.charts.PieChart
+                        android:id="@+id/piechart"
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        app:egInnerPaddingColor="@color/cardBackground"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_transactions"
+                android:textColor="@color/textPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/monthlyCard"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="22dp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/transactionRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="90dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
